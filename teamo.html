@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Te Amo ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<script>
+  window.onload = function () {
+    if (localStorage.getItem("musica_autoplay") === "true") {
+      document.getElementById("audio").play().catch(() => {
+        console.log("Autoplay bloqueado.");
+      });
+      localStorage.removeItem("musica_autoplay");
+    }
+  };
+</script>
+
+
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.textContent = "❤️"; // Agora usa um emoji
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 300);
+</script>
+
+<style>
+  .heart {
+    position: fixed;
+    top: -10px;
+    font-size: 24px;
+    animation: fall 5s linear infinite;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+</style>
+
+
+<body>
+
+  <!-- PLAYER -->
+  <div class="music-player">
+    <img src="album.jfif" class="album-art" alt="Aliança" />
+    <div class="song-info">
+      <h4>Aliança</h4>
+      <p>Artista: Tribalistas</p>
+    </div>
+    <audio id="audio" src="musica.mp3" loop></audio>
+<input type="range" id="progressBar" value="0" max="100" step="1">
+<span id="tempo-atual">0:00</span> / <span id="duracao-total">0:00</span>
+<button id="playPauseBtn">▶</button>
+	
+  </div>
+
+  <!-- CAIXA ENVOLVENDO TUDO -->
+  <div class="caixa-conteudo">
+    
+    <!-- MOLDURA EM PAISAGEM -->
+    <div class="moldura">
+      <div class="carrossel" id="carrossel">
+        <img src="img1.jpg" alt="Imagem 1">
+        <img src="img2.jpg" alt="Imagem 2">
+        <img src="img3.jpg" alt="Imagem 3">
+      </div>
+    </div>
+
+    <!-- CONTADOR -->
+    <div class="contador">
+      <h2>❤️ Eu te amo há:</h2>
+      <p id="timer"></p>
+    </div>
+
+    <!-- TEXTO PERSONALIZADO -->
+    <div class="mensagem">
+      <p>Desde que te conheci, meu mundo ficou mais bonito.</p>
+      <p>Desde aquele lindo ano de 2023, quando te conheci, percebi que havia encontrado uma amizade incrível, única e insubstituível. Cada detalhe seu é especial, desde a forma como nos entendemos até as piadas KKKKKK. Eu te amo de verdade.</p>
+
+<p>Por mais que agora estejamos distantes e conversemos pouco, sinto a necessidade de te entregar esta mensagem junto com este site, que demorei para fazer. Acredito que, mesmo quando estivermos velhos, ainda lembraremos um do outro, trocando piadinhas e relembrando os momentos vividos. Sinto que, contigo, mesmo nos afastamentos, amadureci muito, mudei ideias e permiti mudanças. E, graças a você, estou vivo. Não estou exagerando: você me impediu de fazer algo contra mim mesmo diversas vezes e esteve comigo nos meus piores momentos.</p>
+
+<p>Você é uma pessoa com quem eu queria estar abraçado pela vida inteira, porque sei que cuidaria de mim. Por mais que às vezes nos estranhemos, sempre voltamos e nos entendemos ainda mais. Espero estar contigo por muitos anos, te amando e zoando. Você fez meus dias mais felizes. Suas mensagens sobre o mundo, suas músicas, seu jeito de alfinetar, seus elogios, seu apego, seu amor... Tudo isso eu guardo com muito carinho, porque amo DEMAIS a garotinha que conheço.</p>
+
+<p>Quando você estiver triste, me chama. Eu irei atender e ajudar você, afinal, devo minha vida a você, e essa dívida eu irei pagando até o fim dela. Quando te conheci, percebi o quão diferente você era, só por me ajudar a socializar na escola, brincar comigo e querer me conhecer algo que nunca havia presenciado. Você é um anjinho, é tudo de bom, eu prometo. Sei que agora pode estar passando por um momento difícil, mas estou aqui para te ajudar.</p>
+
+<p>Não há palavras para descrever o que você representa para mim. Todos os jogos que jogamos, as experiências, o jogo de pintar, SUSH, as obbys... TUDO foi único. As calls que fazíamos, o gramado onde sentávamos, as histórias que contávamos, nossos relacionamentos frustrantes com outras pessoas... A vida contigo é única. Você fez isso. Tudo ao seu lado se torna leve, e é isso que mais me faz feliz com você.</p>
+
+<p>Te amo. Ainda tenho muitas coisas para te contar, só esperar o tempo passar. ❤️❤️</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

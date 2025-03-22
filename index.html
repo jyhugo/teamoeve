@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Presente ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #ff99cc;
+      color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .mensagem {
+      background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 80%;
+      color: black; /* Garantindo que o texto fique preto */
+    }
+
+    .btn {
+      background: #ff3366;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .btn:active {
+      transform: scale(0.9);
+      background: #ff6699;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mensagem">
+    <h1>🎁 Clique aqui para acessar o presente feito com muito amor e carinho por Hugo 💖</h1>
+  </div>
+
+  <button class="btn" onclick="irParaPresente()">Clique aqui</button>
+
+
+<script>
+  function irParaPresente() {
+    localStorage.setItem("musica_autoplay", "true"); 
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+      window.location.href = 'teamo.html';
+    }, 1000);
+  }
+</script>
+
+
+</body>
+</html>
